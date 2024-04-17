@@ -1,4 +1,4 @@
-package myAlgorithmn;
+package myAlgorithmn.section1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
