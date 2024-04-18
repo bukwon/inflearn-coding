@@ -1,4 +1,4 @@
-package myAlgorithmn.section2;
+package inflearn.myAlgorithmn.section2;
 
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package inflearn.test;
+package inflearn.inflearn.test;
 
 public class test {
     public static void main(String[] args) {
