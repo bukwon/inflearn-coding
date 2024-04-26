@@ -1,9 +1,9 @@
-package inflearn.reTest.section2;
+package inflearn.myAlgorithmn.section2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class step01 {
+public class step01Re {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

@@ -1,6 +1,5 @@
 package inflearn.myAlgorithmn.section2;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class step05 {

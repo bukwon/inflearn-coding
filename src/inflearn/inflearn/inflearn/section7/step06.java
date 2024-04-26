@@ -1,6 +1,4 @@
-package inflearn.inflearn.section7;
-
-import inflearn.Main;
+package inflearn.inflearn.inflearn.section7;
 
 import java.util.Scanner;
 

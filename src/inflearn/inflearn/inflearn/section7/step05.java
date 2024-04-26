@@ -1,4 +1,4 @@
-package inflearn.inflearn.section7;
+package inflearn.inflearn.inflearn.section7;
 
 public class step05 {
     Node node;
