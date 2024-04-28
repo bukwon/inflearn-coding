@@ -1,8 +1,11 @@
 package inflearn.inflearn.inflearn.test;
 
+import java.util.HashMap;
+
 public class test {
     public static void main(String[] args) {
-        String s = "Hi, my name is bukwon";
-        System.out.println(s.indexOf(s.charAt(12)));
+        HashMap<String, Integer> arr = new HashMap<>();
+        int count = 1;
+        arr.put("txt", count);
     }
 }
