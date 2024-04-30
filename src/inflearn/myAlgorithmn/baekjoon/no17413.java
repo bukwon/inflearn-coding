@@ -1,4 +1,4 @@
-package inflearn.etc.baekjoon.baekjoon;
+package inflearn.myAlgorithmn.baekjoon;
 
 import java.util.Scanner;
 import java.util.Stack;

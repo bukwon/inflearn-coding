@@ -1,4 +1,4 @@
-package inflearn.etc.baekjoon.retest;
+package inflearn.myAlgorithmn.baekjoon.retest;
 
 import java.io.*;
 
