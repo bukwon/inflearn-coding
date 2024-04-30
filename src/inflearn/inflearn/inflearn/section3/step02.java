@@ -1,6 +1,5 @@
 package inflearn.inflearn.inflearn.section3;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
