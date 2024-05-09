@@ -1,7 +1,6 @@
 package inflearn.myAlgorithmn.baekjoon;
 
 import java.io.*;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class no21318 {
@@ -11,7 +10,7 @@ public class no21318 {
     public static void main(String[] args) throws IOException {
         bf = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(bf.readLine());
-        int[] music = new int[n + 1];
+        int[] music = new int[100001];
         st = new StringTokenizer(bf.readLine());
         for (int i = 1; i <= n; i++) {
             music[i] = Integer.parseInt(st.nextToken());
@@ -31,12 +30,12 @@ public class no21318 {
             prefix_sum[i] = tmp;
         }
         int[] answer = new int[q];
+        int start, end;
         for (int i = 0; i < q; i++) {
-            st = new StringTokenizer(bf.readLine());
-            int num1 = Integer.parseInt(st.nextToken());
-            int num2 = Integer.parseInt(st.nextToken());
-            if (num1 == n && num2 == n) continue;
-            answer[i] = Math.abs(prefix_sum[num1] - prefix_sum[num2]);
+            String[] num = bf.readLine().split(" ");
+            start = Integer.parseInt(num[0]);
+            end = Integer.parseInt(num[1]);
+            answer[i] = prefix_sum[end] - prefix_sum[start];
         }
         for (int i: answer) {
             bw.write(i + "\n");

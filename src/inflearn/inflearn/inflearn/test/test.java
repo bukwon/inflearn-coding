@@ -3,55 +3,43 @@ package inflearn.inflearn.inflearn.test;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Stack;
+import java.util.ArrayList;
+import java.util.List;
 
 public class test {
+
+    static int n, m, mistake;
+    static int[] arr;
+    static int[] sum;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        n = Integer.parseInt(br.readLine());
+
+        arr = new int[n + 1];
+        sum = new int[n + 1];
+
+        String[] s = br.readLine().split(" ");
+        for (int i = 1; i <= n; i++) {
+            arr[i] = Integer.parseInt(s[i - 1]);
+            if(arr[i-1]>arr[i]){
+                sum[i] += sum[i-1]+1;
+            }else{
+                sum[i] = sum[i-1];
+            }
+        }
+
+        m = Integer.parseInt(br.readLine());
+
         StringBuilder sb = new StringBuilder();
-        String s = br.readLine();
-        Stack<Character> stack = new Stack<>();
-
-        boolean check = false;
-
-        for (int i = 0; i < s.length(); i++) {
-            if(s.charAt(i) == '<'){
-                check = true;
-                while(!stack.empty()){
-                    sb.append(stack.pop());
-                }
-                sb.append(s.charAt(i));
-            }
-
-            else if(s.charAt(i) == '>'){
-                check = false;
-                sb.append(s.charAt(i));
-            }
-
-            else if(check){
-                sb.append(s.charAt(i));
-            }
-
-            else if(!check){
-                if(s.charAt(i) == ' '){
-                    while(!stack.empty()){
-                        sb.append(stack.pop());
-                    }
-                    sb.append(s.charAt(i));
-                }
-
-                else {
-                    stack.push(s.charAt(i));
-                }
-            }
+        int start, end;
+        for (int i = 0; i < m; i++) {
+            String[] s1 = br.readLine().split(" ");
+            start = Integer.parseInt(s1[0]);
+            end = Integer.parseInt(s1[1]);
+            sb.append(sum[end]-sum[start]).append("\n");
+            mistake=0;
         }
-
-        while(!stack.empty()){
-            sb.append(stack.pop());
-        }
-
         System.out.println(sb.toString());
     }
-
 }
