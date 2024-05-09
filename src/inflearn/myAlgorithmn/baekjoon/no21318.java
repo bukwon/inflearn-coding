@@ -4,24 +4,16 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 public class no21318 {
-    private static BufferedReader bf;
-    private static BufferedWriter bw;
-    private static StringTokenizer st;
     public static void main(String[] args) throws IOException {
-        bf = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = Integer.parseInt(bf.readLine());
         int[] music = new int[100001];
-        st = new StringTokenizer(bf.readLine());
+        StringTokenizer st = new StringTokenizer(bf.readLine());
         for (int i = 1; i <= n; i++) {
             music[i] = Integer.parseInt(st.nextToken());
         }
         int q = Integer.parseInt(bf.readLine());
-        solution(n, q, music);
-    }
-
-    private static void solution(int n, int q, int[] music) throws IOException{
-        bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        bf = new BufferedReader(new InputStreamReader(System.in));
         int[] prefix_sum = new int[100001];
         int tmp = 0;
         for (int i = 1; i <= n; i++) {

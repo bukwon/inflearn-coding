@@ -1,4 +1,4 @@
-package inflearn.myAlgorithmn.section4;
+package inflearn.inflearn.inflearn.section4;
 
 import java.util.Collections;
 import java.util.Scanner;
@@ -17,28 +17,20 @@ public class step05 {
     }
 
     private static int Solution(int[] arr, int n, int k) {
-        int answer = Integer.MIN_VALUE;
         TreeSet<Integer> Tset = new TreeSet<>(Collections.reverseOrder());
 
         for (int i = 0; i < n; i++) {
-            Tset.add(arr[i]);
-        }
-        int[] arrTmp = new int[Tset.size()];
-        int tmp = 0;
-        for (int i : Tset) {
-            arrTmp[tmp++] = i;
-        }
-        int count = 0;
-        for (int i = 0; i < Tset.size() - 2; i++) {
-            for (int j = i + 1; j < Tset.size() - 1; j++) {
-                for (int l = j + 1; l < Tset.size(); l++) {
-                    answer = arrTmp[i] + arrTmp[j] + arrTmp[l];
-                    count++;
-                    if (count == k) return answer;
+            for (int j = i + 1; j < n; j++) {
+                for (int l = j + 1; l < n; l++) {
+                    Tset.add(arr[i] + arr[j] + arr[l]);
                 }
             }
+        }
+        int cnt = 0;
+        for (int i : Tset) {
+            cnt++;
+            if (cnt == k) return i;
         }
         return -1;
     }
 }
-// 내껀 오답
