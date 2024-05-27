@@ -3,43 +3,34 @@ package inflearn.inflearn.inflearn.test;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class test {
 
-    static int n, m, mistake;
-    static int[] arr;
-    static int[] sum;
-
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        n = Integer.parseInt(br.readLine());
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String[] phone_book = new String[n];
+        for (int i = 0; i < n; i++) {
+            phone_book[i] = sc.next();
+        }
+        System.out.println(solution(phone_book));
+    }
 
-        arr = new int[n + 1];
-        sum = new int[n + 1];
+    private static boolean solution(String[] phoneBook) {
+        Map<String, Integer> map = new HashMap<>();
 
-        String[] s = br.readLine().split(" ");
-        for (int i = 1; i <= n; i++) {
-            arr[i] = Integer.parseInt(s[i - 1]);
-            if(arr[i-1]>arr[i]){
-                sum[i] += sum[i-1]+1;
-            }else{
-                sum[i] = sum[i-1];
+        // 2. 모든 전화번호를 HashMap에 넣는다.
+        for (int i = 0; i < phoneBook.length; i++)
+            map.put(phoneBook[i], i);
+
+        // 3. 모든 전화번호의 substring이 HashMap에 존재하는지 확인한다.
+        for (int i = 0; i < phoneBook.length; i++)
+            for (int j = 0; j < phoneBook[i].length(); j++) {
+                if (map.containsKey(phoneBook[i].substring(0, j)))
+                    return false;
             }
-        }
 
-        m = Integer.parseInt(br.readLine());
-
-        StringBuilder sb = new StringBuilder();
-        int start, end;
-        for (int i = 0; i < m; i++) {
-            String[] s1 = br.readLine().split(" ");
-            start = Integer.parseInt(s1[0]);
-            end = Integer.parseInt(s1[1]);
-            sb.append(sum[end]-sum[start]).append("\n");
-            mistake=0;
-        }
-        System.out.println(sb.toString());
+        return true;
     }
 }
