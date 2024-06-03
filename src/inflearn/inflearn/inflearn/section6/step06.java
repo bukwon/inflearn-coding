@@ -1,26 +1,27 @@
 package inflearn.inflearn.inflearn.section6;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class step06 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] array = new int[n];
-        for(int i = 0; i < n; i++) array[i] = sc.nextInt();
-        for (int i: solution(n, array)) System.out.print(i + " ");
+        int[] student = new int[n];
+        for (int i = 0; i < n; i++) student[i] = sc.nextInt();
+        for (int i: solution(n, student)) {
+            System.out.print(i + " ");
+        }
     }
 
-    private static int[] solution(int n, int[] array) {
-        for (int i = 0; i < n - 1; i++) {
-            int idx = i;
-            for (int j = i + 1; j < n; j++) {
-                if (array[j] < array[idx]) idx = j;
-            }
-            int tmp = array[i];
-            array[i] = array[idx];
-            array[idx] = tmp;
+    private static ArrayList<Integer> solution(int n, int[] student) {
+        ArrayList<Integer> answer = new ArrayList<>();
+        int[] tmp = student.clone();
+        Arrays.sort(tmp);
+        for (int i = 0; i < n; i++) {
+            if (student[i] != tmp[i]) answer.add(i + 1);
         }
-        return array;
+        return answer;
     }
 }
