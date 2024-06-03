@@ -28,8 +28,9 @@ public class step07 {
         });
 
         for (int i = 0; i < n; i++) {
-             System.out.println(array[i][0] + " " + array[i][1]);
+            sb.append(array[i][0]).append(" ").append(array[i][1]).append("\n");
         }
-        return null;
+        return String.valueOf(sb);
     }
 }
+// 틀림
