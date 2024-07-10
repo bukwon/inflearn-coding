@@ -1,42 +1,48 @@
 package inflearn.myAlgorithmn.baekjoon;
 
+import java.io.*;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class no15649 {
+    static boolean[] visit;
     public static int[] arr;
-    public static boolean[] visit;
+    static BufferedReader bf;
+    static BufferedWriter bw;
+    static StringBuilder sb = new StringBuilder();
+    public static void main(String[] args) throws IOException {
+        bf = new BufferedReader(new InputStreamReader(System.in));
+        bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(bf.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
 
-    public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-
-        int N = sc.nextInt();
-        int M = sc.nextInt();
-        // 4 2   3 1
-        arr = new int[M];
-        visit = new boolean[N];
-        dfs(N, M, 0);
-
+        visit = new boolean[n];
+        arr = new int[m];
+        dfs(n, m, 0);
+        bw.write(sb + "");
+        bw.flush();
+        bf.close();
+        bw.close();
     }
 
-    public static void dfs(int N, int M, int depth) {
-        if(depth == M) {
-            for(int val : arr) {
-                System.out.print(val + " ");
+    private static void dfs(int n, int m, int depth) {   // num1은 배열 체크, num2는 개수 체크
+        if (depth == m) {
+            for (int val: arr) {
+                sb.append(val).append(" ");
             }
-            System.out.println();
+            sb.append("\n");
             return;
         }
 
-        for(int i=0; i<N; i++) {
-            if(!visit[i]) {
+        for (int i = 0; i < n; i++) {
+            if (!visit[i]) {
                 visit[i] = true;
-                arr[depth] = i+1;
-                dfs(N, M, depth + 1);
-
+                arr[depth] = i + 1;
+                dfs(n, m, depth + 1);
                 visit[i] = false;
             }
-        }
 
+        }
     }
 }
