@@ -2,7 +2,7 @@ package inflearn.myAlgorithmn.section8;
 
 import java.util.Scanner;
 
-class Main{
+class step08{
     static int n;
     static int f;
     static int[] b, p, ch;
