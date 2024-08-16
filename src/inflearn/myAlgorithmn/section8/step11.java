@@ -2,7 +2,7 @@ package inflearn.myAlgorithmn.section8;
 
 import java.util.Scanner;
 
-public class step10 {
+public class step11 {
     static int answer = 0;
     static int[][] miro = new int[9][9];
     public static void main(String[] args) {

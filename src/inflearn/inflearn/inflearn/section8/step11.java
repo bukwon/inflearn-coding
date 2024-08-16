@@ -2,7 +2,7 @@ package inflearn.inflearn.inflearn.section8;
 
 import java.util.Scanner;
 
-public class step10 {
+public class step11 {
     static int[] dx = {-1, 0, 1, 0};
     static int[] dy = {0, 1, 0, -1};
     static int[][] board;
