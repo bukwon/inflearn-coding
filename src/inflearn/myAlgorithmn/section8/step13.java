@@ -8,6 +8,7 @@ public class step13 {
     static int[] dy = {0, -1, -1, -1, 0, 1, 1, 1};
     static int answer = 0;
     static int N;
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         N = sc.nextInt();
@@ -20,7 +21,7 @@ public class step13 {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 if (island[i][j] == 0) continue;
-                answer ++;
+                answer++;
                 DFS(i, j);
             }
         }
